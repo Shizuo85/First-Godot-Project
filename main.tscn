@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dleh6wj1vyebx"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_tlo54"]
+[ext_resource type="PackedScene" uid="uid://dob6j7trpovh4" path="res://BG.tscn" id="2_bqvdf"]
+
+[node name="Main" type="Node2D"]
+position = Vector2(0, 4)
+script = ExtResource("1_tlo54")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 188.0
+offset_right = 704.0
+offset_bottom = 252.0
+text = "Continue"
+
+[node name="New Game" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 316.0
+offset_right = 704.0
+offset_bottom = 380.0
+text = "New Game"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 512.0
+offset_top = 444.0
+offset_right = 704.0
+offset_bottom = 509.0
+text = "Quit"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_bqvdf")]
+visible = false
+
+[connection signal="pressed" from="Continue" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="New Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_button_pressed"]
